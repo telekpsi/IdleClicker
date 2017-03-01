@@ -26,6 +26,7 @@ public class IdleClicker extends JFrame{
 	private Hero hero;
 	private Boolean isHeroDead = false;
 	private Monster monster;
+	private Boolean isMonsterDead = false;
 	
 	public static void main(String[] args) {
 		IdleClicker game = new IdleClicker();
@@ -206,6 +207,18 @@ public class IdleClicker extends JFrame{
 		
 		//gonna need some loops to keep everything going
 		//set the jlabels for names and stats and delete/add of portraits after every call of RollMonster
+		
+		//wait for initial button click here
+		
+		//actual game loop for one monster
+		while (isHeroDead==false){
+			//timed attack by monster
+			//when timed attack occurs, update hero health, check if hero is dead
+			//if hero dies, break out of loop and/or end program after popup message (possibly with death stats)
+			//have listener for button clicks, every button click update monster health, check if monster is dead
+			//if monster is dead, break out of loop, roll new monster, update jpanel, set monster back to alive
+			//figure out how I'm going to repeat the process
+		}
 	}
 
 	//maybe should make private
