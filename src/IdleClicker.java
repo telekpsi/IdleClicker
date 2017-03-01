@@ -1,3 +1,19 @@
+/*
+ David Evander
+ 
+-start screen that comes up when game runs asking hero's name
+-implement items that boost stats
+-monster stats are somewhat random within range of hero
+-set up attack action
+-update health method for hero and monster
+-timer based attack by monster
+-possible speed implementation for monster
+-if hero's health hits 0, death screen, offer to start over
+-when monster dies, hero gets exp(check for level up), 1/10 chance of item drop
+-hero and monster images
+-monster name and picture relation (randomized) 
+
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -21,6 +37,8 @@ public class IdleClicker extends JFrame{
 	public IdleClicker() {
 		Hero you = new Hero();
 		hero=you;
+		Monster him = new Monster();
+		monster=him;
 		System.out.println(hero.att);
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.CENTER);
@@ -275,6 +293,7 @@ public class IdleClicker extends JFrame{
 		
 	}
 	
+	//once expNow==expNext, hero's stats get a boost
 	public void LvlUp(Hero hero){
 		hero.setAtt(hero.getAtt()+2);
 		hero.setDef(hero.getDef()+1);
@@ -283,10 +302,11 @@ public class IdleClicker extends JFrame{
 		hero.setHltMax((int)Math.ceil((double)hero.getHltMax()*1.2));
 		hero.setHltNow(hero.getHltMax());
 		hero.setLvl(hero.getLvl()+1);
-		updateStats();
+		updateHStats();
 	}
 	
-	public void updateStats(){
+	//tells JFrame to update the stats
+	public void updateHStats(){
 		
 	}
 	
